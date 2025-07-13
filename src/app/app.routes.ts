@@ -7,6 +7,9 @@ import { FabricanteCreate } from './fabricantes/pages/fabricante-create/fabrican
 import { FabricanteEdit } from './fabricantes/pages/fabricante-edit/fabricante-edit';
 import { AuthGuard } from './auth/auth-guard';
 import { MainLayoutComponent } from './layout/main.component';
+import { PrincipioAtivoList } from './principio-ativo/pages/principio-ativo-list/principio-ativo-list';
+import { PrincipioAtivoCreate } from './principio-ativo/pages/principio-ativo-create/principio-ativo-create';
+import { PrincipioAtivoEdit } from './principio-ativo/pages/principio-ativo-edit/principio-ativo-edit';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -24,6 +27,14 @@ export const routes: Routes = [
           { path: '', component: FabricanteList },
           { path: 'novo', component: FabricanteCreate },
           { path: ':id/editar', component: FabricanteEdit }
+        ]
+      },
+      {
+        path: 'principio_ativos',
+        children: [
+          { path: '', component: PrincipioAtivoList },
+          { path: 'novo', component: PrincipioAtivoCreate },
+          { path: ':id/editar', component: PrincipioAtivoEdit }
         ]
       }
     ]

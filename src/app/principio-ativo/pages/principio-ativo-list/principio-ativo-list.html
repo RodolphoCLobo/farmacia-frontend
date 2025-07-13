@@ -1,0 +1,30 @@
+<div class="cabecalho">
+  <h2>Lista de Principio Ativos</h2>
+  <button mat-raised-button color="primary" (click)="novoPrincipioAtivo()">
+    Novo Principio Ativo
+  </button>
+</div>
+
+<table mat-table [dataSource]="principio_ativos" class="mat-elevation-z2 full-width-table">
+  <!-- Nome -->
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell *matHeaderCellDef>Nome</th>
+    <td mat-cell *matCellDef="let pa">{{ pa.nome }}</td>
+  </ng-container>
+
+  <!-- Ações -->
+  <ng-container matColumnDef="acoes">
+    <th mat-header-cell *matHeaderCellDef>Ações</th>
+    <td mat-cell *matCellDef="let pa">
+      <button mat-icon-button color="primary" (click)="editarPrincipioAtivo(pa.id)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="excluirPrincipioAtivo(pa.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

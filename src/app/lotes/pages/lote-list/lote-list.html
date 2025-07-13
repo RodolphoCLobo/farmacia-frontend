@@ -1,0 +1,50 @@
+<div class="header">
+  <h2>Lotes</h2>
+  <button mat-raised-button color="primary" (click)="novoLote()">
+    <mat-icon>add</mat-icon>
+    Novo Lote
+  </button>
+</div>
+
+<table mat-table [dataSource]="lotes" class="mat-elevation-z2 full-width">
+
+  <ng-container matColumnDef="numero_lote">
+    <th mat-header-cell *matHeaderCellDef>Nº Lote</th>
+    <td mat-cell *matCellDef="let lote">{{ lote.numero_lote }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="produto">
+    <th mat-header-cell *matHeaderCellDef>Produto</th>
+    <td mat-cell *matCellDef="let lote">{{ lote.produto_nome }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="quantidade">
+    <th mat-header-cell *matHeaderCellDef>Quantidade</th>
+    <td mat-cell *matCellDef="let lote">{{ lote.quantidade }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="fabricacao">
+    <th mat-header-cell *matHeaderCellDef>Fabricação</th>
+    <td mat-cell *matCellDef="let lote">{{ lote.data_fabricacao | date }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="validade">
+    <th mat-header-cell *matHeaderCellDef>Validade</th>
+    <td mat-cell *matCellDef="let lote">{{ lote.data_validade | date }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="acoes">
+    <th mat-header-cell *matHeaderCellDef>Ações</th>
+    <td mat-cell *matCellDef="let lote">
+      <button mat-icon-button color="primary" (click)="editarLote(lote.id)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="excluirLote(lote.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

@@ -10,6 +10,9 @@ import { MainLayoutComponent } from './layout/main.component';
 import { PrincipioAtivoList } from './principio-ativo/pages/principio-ativo-list/principio-ativo-list';
 import { PrincipioAtivoCreate } from './principio-ativo/pages/principio-ativo-create/principio-ativo-create';
 import { PrincipioAtivoEdit } from './principio-ativo/pages/principio-ativo-edit/principio-ativo-edit';
+import { LoteList } from './lotes/pages/lote-list/lote-list';
+import { LoteCreate } from './lotes/pages/lote-create/lote-create';
+import { LoteEdit } from './lotes/pages/lote-edit/lote-edit';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -35,6 +38,14 @@ export const routes: Routes = [
           { path: '', component: PrincipioAtivoList },
           { path: 'novo', component: PrincipioAtivoCreate },
           { path: ':id/editar', component: PrincipioAtivoEdit }
+        ]
+      },
+      {
+        path: 'lotes',
+        children: [
+          { path: '', component: LoteList },
+          { path: 'novo', component: LoteCreate },
+          { path: ':id/editar', component: LoteEdit }
         ]
       }
     ]

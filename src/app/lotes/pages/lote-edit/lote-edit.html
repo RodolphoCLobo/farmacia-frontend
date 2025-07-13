@@ -1,0 +1,8 @@
+<h2>Editar lote</h2>
+
+<app-lote-form
+  [initialData]="lote"
+  [produtos]="produtos"
+  (formSubmit)="onSubmit($event)"
+  (cancel)="onCancel()"
+></app-lote-form>

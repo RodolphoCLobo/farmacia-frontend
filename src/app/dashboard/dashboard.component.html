@@ -1,0 +1,13 @@
+<main class="main-content">
+  <h2>Visão Geral</h2>
+
+  <div class="cards-grid">
+    <mat-card class="widget-card" *ngFor="let widget of widgets">
+      <mat-card-title>{{ widget.title }}</mat-card-title>
+      <mat-card-content>
+        <p class="value">{{ widget.value }}</p>
+        <p class="description">{{ widget.description }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</main>

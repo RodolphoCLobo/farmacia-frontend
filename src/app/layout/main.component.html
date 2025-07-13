@@ -1,0 +1,17 @@
+<mat-sidenav-container class="container">
+  <mat-sidenav mode="side" opened class="sidebar">
+    <mat-nav-list>
+      <mat-list-item routerLink="/dashboard">Dashboard</mat-list-item>
+      <mat-list-item routerLink="/fabricantes">Fabricantes</mat-list-item>
+      <mat-list-item routerLink="/#">Pricípios Ativos</mat-list-item>
+      <mat-list-item routerLink="/#">Produtos</mat-list-item>
+      <mat-list-item routerLink="/#">Lotes</mat-list-item>
+      <mat-list-item routerLink="/#">Usuários</mat-list-item>
+      <mat-list-item routerLink="/#">Sair</mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content">
+    <router-outlet />
+  </mat-sidenav-content>
+</mat-sidenav-container>

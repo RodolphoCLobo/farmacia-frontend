@@ -1,0 +1,9 @@
+<h2>Editar produto</h2>
+
+<app-produto-form
+  [initialData]="produto"
+  [fabricantes]="fabricantes"
+  [principiosAtivos]="principiosAtivos"
+  (formSubmit)="onSubmit($event)"
+  (cancel)="onCancel()"
+></app-produto-form>

@@ -13,6 +13,9 @@ import { PrincipioAtivoEdit } from './principio-ativo/pages/principio-ativo-edit
 import { LoteList } from './lotes/pages/lote-list/lote-list';
 import { LoteCreate } from './lotes/pages/lote-create/lote-create';
 import { LoteEdit } from './lotes/pages/lote-edit/lote-edit';
+import { ProdutoList } from './produtos/pages/produto-list/produto-list';
+import { ProdutoCreate } from './produtos/pages/produto-create/produto-create';
+import { ProdutoEdit } from './produtos/pages/produto-edit/produto-edit';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -38,6 +41,14 @@ export const routes: Routes = [
           { path: '', component: PrincipioAtivoList },
           { path: 'novo', component: PrincipioAtivoCreate },
           { path: ':id/editar', component: PrincipioAtivoEdit }
+        ]
+      },
+      {
+        path: 'produtos',
+        children: [
+          { path: '', component: ProdutoList },
+          { path: 'novo', component: ProdutoCreate },
+          { path: ':id/editar', component: ProdutoEdit }
         ]
       },
       {

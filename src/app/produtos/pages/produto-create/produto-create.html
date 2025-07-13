@@ -1,0 +1,8 @@
+<h2>Criar novo produto</h2>
+
+<app-produto-form
+  [fabricantes]="fabricantes"
+  [principiosAtivos]="principiosAtivos"
+  (formSubmit)="onSubmit($event)"
+  (cancel)="onCancel()"
+></app-produto-form>

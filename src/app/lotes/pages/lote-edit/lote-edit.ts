@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LoteFormComponent, Lote, Produto } from '../../components/fabricante-form/lote-form';
+import { LoteFormComponent, Lote, Produto } from '../../components/lote-form/lote-form';
 
 @Component({
   selector: 'app-lote-edit',
